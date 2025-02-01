@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<!--
+		TOPページは上から3つまで表示
+
+		<id>1</id> プレリリース
+		<id>2</id> 企業情報
+		<id>3</id> イベント情報
+		<listingDate>YYYY/MM/DD</listingDate> 掲載日...掲載日を超えたら表示
+		<limitDate>YYYY/MM/DD</limitDate> 期限日...期限日を超えたら非表示
+		<anchor>/news/release/20240418.html</anchor> リンク先...不要の場合は削除
+	-->
+
+	<item>
+		<id>2</id>
+		<listingDate>2024/01/05</listingDate>
+		<text>令和6年能登半島地震、緊急支援寄付</text>
+		<anchor>/news/company/20240105.html</anchor>
+	</item>
+
+	<item>
+		<id>2</id>
+		<listingDate>2024/03/14</listingDate>
+		<text>かがやき健康宣言企業に認定</text>
+		<anchor>/news/company/20240314.html</anchor>
+	</item>
+
+	<item>
+		<id>2</id>
+		<listingDate>2024/03/14</listingDate>
+		<text>QC大会にて生産2部が優秀賞を受賞しました。</text>
+		<anchor>/news/company/20240314_2.html</anchor>
+	</item>
+
+	<item>
+		<id>2</id>
+		<listingDate>2024/04/01</listingDate>
+		<text>今年も新入社員がイシメックスへ入社しました。</text>
+		<anchor>/news/company/20240401.html</anchor>
+	</item>
+
+	<item>
+		<id>2</id>
+		<listingDate>2024/04/05</listingDate>
+		<text>新事業年度懇親会を行いました。</text>
+		<anchor>/news/company/20240405.html</anchor>
+	</item>
+
+	<item>
+		<id>2</id>
+		<listingDate>2024/04/01</listingDate>
+		<text>ゴールデンウィーク期間中の操業のお知らせ</text>
+		<limitDate>2024/04/20</limitDate>
+		<anchor>/news/company/20240401.html</anchor>
+	</item>
+
+	<item>
+		<id>3</id>
+		<listingDate>2024/05/16</listingDate>
+		<text>ビジネス創造フェア出展</text>
+		<anchor>/news/event/20240516.html</anchor>
+	</item>
+
+  <item>
+		<id>3</id>
+    <listingDate>2024/05/19</listingDate>
+		<text>ファミリーデーイベント</text>
+		<anchor>/news/event/20240519.html</anchor>
+  </item>
+
+  <item>
+		<id>2</id>
+    <listingDate>2024/07/10</listingDate>
+		<text>歯周病予防出前講座開催</text>
+		<anchor>/news/company/20240710.html</anchor>
+  </item>
+
+  <item>
+		<id>2</id>
+    <listingDate>2024/00110</listingDate>
+		<text>ホームページリニューアル</text>
+  </item>
+
+  <item>
+		<id>2</id>
+		<listingDate>2024/08/01</listingDate>
+		<limitDate>2024/08/30</limitDate>
+		<text>夏季休業のお知らせ</text>
+		<anchor>/news/company/20240801.html</anchor>
+	</item>
+</data>

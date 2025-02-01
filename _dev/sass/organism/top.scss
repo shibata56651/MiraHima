@@ -1,0 +1,292 @@
+@use "../definition/mixin" as *;
+@use "../definition/var" as *;
+
+.str-contents-wrapper {
+  &__inner {
+    padding-top: 100svh;
+  }
+
+  &--top {
+    padding-top: 56px;
+  }
+}
+
+.mv-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100svh * 2);
+
+  &__content {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    bottom: 300px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__img {
+    @include rwd(bpSp, below) {
+      width: 300px;
+    }
+
+    @include rwd(bpSp) {
+      width: 460px;
+    }
+  }
+}
+
+.lead-text-content {
+  @include rwd(bpSp) {
+    margin-bottom: 60px;
+  }
+}
+
+.lead-text {
+  text-align: center;
+  color: $color-white;
+}
+
+.unit-content,
+.youtube-wrap {
+  margin: 0 auto;
+
+  @include rwd(bpSp, below) {
+    width: 300px;
+  }
+
+  @include rwd(bpSp) {
+    max-width: 1140px;
+    padding: 60px 20px 60px;
+  }
+}
+
+.swiper-container,
+.swiper-container-02 {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @include rwd(bpSp, below) {
+    max-width: 300px;
+  }
+
+  @include rwd(bpSp) {
+    max-width: 400px;
+  }
+}
+
+.swiper-container {
+  .swiper-pagination-bullet {
+    &.swiper-pagination-bullet-active {
+      background: $color-yellow;
+    }
+  }
+}
+
+.swiper-container-02 {
+  .swiper-pagination-bullet {
+    &.swiper-pagination-bullet-active {
+      background: $color-blue;
+    }
+  }
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: $color-white !important;
+
+  &::before {
+    @include pseudo();
+
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 1000px;
+    background: linear-gradient(90deg, rgba(141, 245, 247, .7) 0%, rgba(163,255,255, .7) 35%, rgba(255,255,255, .7) 50%, rgba(255,234,107, .7) 65%, rgba(251,226,74, .7) 100%);
+    filter: blur(16px);
+  }
+}
+
+.swiper-pagination-bullet {
+  &:not(.swiper-pagination-bullet-active) {
+    background: $color-white !important;
+    opacity: .5;
+  }
+}
+
+.movie-content {
+  position: relative;
+  width: 100svw;
+  height: 100svh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.movie-target {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  width: auto;
+  height: auto;
+
+  @include rwd(bpSp, below) {
+    min-height: 25%;
+  }
+
+  @include rwd(bpSp) {
+    min-height: 100%;
+  }
+}
+
+.psyllium-a,
+.psyllium-b,
+.psyllium-c,
+.psyllium-d {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100svh;
+  z-index: -1;
+
+  &::before,
+  &::after {
+    display: block;
+    position: absolute;
+    content: "";
+    height: 52px;
+    width: 8px;
+    border-radius: 100px;
+    animation: spotlightAnimation 2s linear infinite alternate;
+    transform: translate(0, 100%);
+    transform-origin: center bottom;
+    opacity: .6;
+    filter: blur(2px);
+  }
+
+  &::before {
+    background: #fbe24a;
+  }
+
+  &::after {
+    background: #8df6f7;
+  }
+}
+
+.psyllium-a {
+  &::before {
+    left: 30px;
+    top: 20%;
+  }
+
+  &::after {
+    left: 80px;
+    top: 30%;
+  }
+}
+
+.psyllium-b {
+  &::before {
+    left: 46%;
+    top: 42%;
+  }
+
+  &::after {
+    left: 52%;
+    top: 40%;
+  }
+}
+
+.psyllium-c {
+  &::before {
+    right: 6%;
+    top: 42%;
+  }
+
+  &::after {
+    right: 18%;
+    top: 40%;
+  }
+}
+
+.psyllium-d {
+  &::before {
+    right: 24%;
+    bottom: 18%;
+  }
+
+  &::after {
+    right: 30%;
+    bottom: 20%;
+  }
+}
+
+.spot-light {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100svh;
+  z-index: -1;
+
+  &--left {
+    &::before {
+      display: block;
+      top: -5%;
+      left: 0%;
+      height: 140%;
+      transform: rotate(-25deg) translate(0, 0);
+      transform-origin: center top;
+    }
+
+    &::after {
+      display: block;
+      top: -5%;
+      right: 0%;
+      height: 140%;
+      transform: rotate(25deg) translate(0, 0);
+      transform-origin: center top;
+    }
+  }
+
+  &--right {
+    &::before {
+      display: block;
+      top: -5%;
+      left: 24%;
+      height: 140%;
+      transform: rotate(25deg) translate(0, 0);
+      transform-origin: center top;
+    }
+
+    &::after {
+      display: block;
+      top: -5%;
+      right: 24%;
+      height: 140%;
+      transform: rotate(-25deg) translate(0, 0);
+      transform-origin: center top;
+    }
+  }
+
+  &::before, &::after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 260px;
+    background: #fff;
+    clip-path: polygon(44% 0, 56% 0, 90% 100%, 10% 100%);
+    opacity: .3;
+  }
+}

@@ -1,0 +1,172 @@
+@use "../../definition/mixin" as *;
+@use "../../definition/var" as *;
+
+/* モーダルjsのスタイル */
+.js-modal-content {
+  [data-script-enabled="true"] & {
+    display: none;
+    opacity: 0;
+
+    &.is-active {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1140px;
+      width: calc(100% - 10px);
+      max-height: calc(100vh - 130px);
+      min-height: 150px;
+      height: auto;
+      z-index: 1000;
+      transform: translateY(-50%) translateX(-50%);
+      opacity: 1;
+      transition: opacity .2s;
+
+      .modal-wrap {
+        position: relative;
+
+        >.modal {
+          display: block;
+          width: calc(100% - 10px);
+          max-height: calc(100vh - 130px);
+          height: 100%;
+          overflow: auto;
+          margin: 0 auto;
+          border-radius: 20px;
+          opacity: 1;
+          z-index: 101;
+        }
+
+        &._type-a {
+          >.modal {
+            max-height: calc(100vh - 125px);
+            margin: 80px auto 0;
+          }
+
+          .modal-content {
+            padding: 30px;
+          }
+
+          .close-area {
+            >.btn-close {
+              top: 20px;
+              width: 48px;
+              height: 48px;
+            }
+          }
+        }
+
+        .close-area {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+
+          >.btn-close {
+            position: absolute;
+            top: -35px;
+            right: 0;
+            font-size: 0;
+            border-radius: 10000px;
+            padding: 13px;
+            transition: .3s;
+
+            &::before,
+            &::after {
+              @include pseudo();
+              top: 50%;
+              left: 50%;
+              width: 15px;
+              height: 2px;
+              transition: .3s;
+            }
+
+            &::before {
+              transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            &::after {
+              transform: translate(-50%, -50%) rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include rwd(bpSp, above) {
+    [data-script-enabled="true"] & {
+      &.is-active {
+        .modal-wrap {
+          &._type-a {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+  @include rwd(bpSp, below) {
+    [data-script-enabled="true"] & {
+      &.is-active {
+        .modal-wrap {
+          >.modal {
+            width: calc(100% - 20px);
+          }
+
+          &._type-a {
+            .modal-content {
+              padding: 20px;
+            }
+
+            .close-area {
+              >.btn-close {
+                top: 30px;
+                width: 28px;
+                height: 28px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.js-modal-hook {
+  position: relative;
+
+  &::before {
+    @include pseudo();
+    right: 18px;
+    bottom: 18px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.is-modal-fixed {
+  position: fixed;
+  width: 100%;
+}
+
+/* モーダル表示時のスタイル */
+#js-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity .2s;
+  pointer-events: none;
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 100;
+  }
+}

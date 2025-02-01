@@ -1,0 +1,41 @@
+@use "../definition/mixin" as *;
+@use "../definition/var" as *;
+
+.lyt-content {
+  @include rwd(bpSp) {
+    display: flex;
+    gap: 16px;
+    margin: 120px auto 0;
+    max-width: 800px;
+    width: 100%;
+
+    + .lyt-content {
+      margin: 60px auto 0;
+    }
+  }
+
+  &--reverse {
+    @include rwd(bpSp) {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 16px;
+    }
+  }
+}
+
+.lyt-item {
+  &__img {
+    position: relative;
+
+    @include rwd(bpSp) {
+      flex-shrink: 4;
+    }
+  }
+
+  &__text {
+    width: 100%;
+  
+    @include rwd(bpSp) {
+    }
+  }
+}

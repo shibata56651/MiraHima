@@ -1,0 +1,323 @@
+@charset "UTF-8";
+/* stylelint-disable scss/dollar-variable-pattern */
+/* モーダルjsのスタイル */
+[data-script-enabled=true] .js-modal-content {
+  display: none;
+  opacity: 0;
+}
+[data-script-enabled=true] .js-modal-content.is-active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1140px;
+  width: calc(100% - 10px);
+  max-height: calc(100vh - 130px);
+  min-height: 150px;
+  height: auto;
+  z-index: 1000;
+  transform: translateY(-50%) translateX(-50%);
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+[data-script-enabled=true] .js-modal-content.is-active .modal-wrap {
+  position: relative;
+}
+[data-script-enabled=true] .js-modal-content.is-active .modal-wrap > .modal {
+  display: block;
+  width: calc(100% - 10px);
+  max-height: calc(100vh - 130px);
+  height: 100%;
+  overflow: auto;
+  margin: 0 auto;
+  border-radius: 20px;
+  opacity: 1;
+  z-index: 101;
+}
+[data-script-enabled=true] .js-modal-content.is-active .modal-wrap._type-a > .modal {
+  max-height: calc(100vh - 125px);
+  margin: 80px auto 0;
+}
+[data-script-enabled=true] .js-modal-content.is-active .modal-wrap._type-a .modal-content {
+  padding: 30px;
+}
+[data-script-enabled=true] .js-modal-content.is-active .modal-wrap._type-a .close-area > .btn-close {
+  top: 20px;
+  width: 48px;
+  height: 48px;
+}
+[data-script-enabled=true] .js-modal-content.is-active .modal-wrap .close-area {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+[data-script-enabled=true] .js-modal-content.is-active .modal-wrap .close-area > .btn-close {
+  position: absolute;
+  top: -35px;
+  right: 0;
+  font-size: 0;
+  border-radius: 10000px;
+  padding: 13px;
+  transition: 0.3s;
+}
+[data-script-enabled=true] .js-modal-content.is-active .modal-wrap .close-area > .btn-close::before, [data-script-enabled=true] .js-modal-content.is-active .modal-wrap .close-area > .btn-close::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 2px;
+  transition: 0.3s;
+}
+[data-script-enabled=true] .js-modal-content.is-active .modal-wrap .close-area > .btn-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+[data-script-enabled=true] .js-modal-content.is-active .modal-wrap .close-area > .btn-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+@media print, screen and (min-width: 769px) {
+  [data-script-enabled=true] .js-modal-content.is-active .modal-wrap._type-a {
+    width: auto;
+  }
+}
+@media print, screen and (max-width: 768px) {
+  [data-script-enabled=true] .js-modal-content.is-active .modal-wrap > .modal {
+    width: calc(100% - 20px);
+  }
+  [data-script-enabled=true] .js-modal-content.is-active .modal-wrap._type-a .modal-content {
+    padding: 20px;
+  }
+  [data-script-enabled=true] .js-modal-content.is-active .modal-wrap._type-a .close-area > .btn-close {
+    top: 30px;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.js-modal-hook {
+  position: relative;
+}
+.js-modal-hook::before {
+  display: block;
+  position: absolute;
+  content: "";
+  right: 18px;
+  bottom: 18px;
+  width: 16px;
+  height: 16px;
+}
+
+.is-modal-fixed {
+  position: fixed;
+  width: 100%;
+}
+
+/* モーダル表示時のスタイル */
+#js-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+#js-modal-overlay.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 100;
+}
+
+[data-script-enabled=true] .js-toggle-item {
+  display: block;
+}
+[data-script-enabled=true] .js-toggle-item + .business-items {
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+[data-script-enabled=true] .js-toggle-item.is-animation {
+  animation: businessToggleAnimation 0.25s ease-in-out forwards;
+}
+[data-script-enabled=true] .js-toggle-item.is-animation + .business-items {
+  display: block;
+}
+[data-script-enabled=true] .js-toggle-item.is-active + .business-items + .btn-business::before {
+  transform: rotate(-45deg);
+}
+[data-script-enabled=true] .js-toggle-item.is-active + .business-items + .btn-business::after {
+  transform: rotate(225deg);
+}
+[data-script-enabled=true] .js-toggle-item:not(.is-active) + .business-items {
+  display: none;
+}
+
+#js-menu-circle {
+  z-index: -1;
+}
+#js-menu-circle.is-active, #js-menu-circle.is-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+#js-menu-circle.is-active::before, #js-menu-circle.is-close::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 16px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 10000000px;
+}
+#js-menu-circle.is-active::before {
+  animation: menuAnimation 0.3s ease-in-out forwards;
+}
+#js-menu-circle.is-close::before {
+  transform: scale(80);
+  animation: menuCloseAnimation 0.3s 0.3s ease-in-out forwards;
+}
+
+.js-menu-status {
+  color: transparent;
+  font-size: 0px;
+}
+
+.js-faq-status {
+  color: transparent;
+  font-size: 0;
+}
+
+.is-fixed {
+  position: fixed;
+  width: 100%;
+}
+
+[data-script-enabled=true] .js-tab > ul > li.is-active > a {
+  position: relative;
+}
+[data-script-enabled=true] .js-tab > ul > li.is-active > a::before {
+  display: block;
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  width: calc(100% - 40px);
+  height: 1px;
+  transform: translate(-50%, 0);
+}
+
+.js-tab-item,
+.js-tab-news-items {
+  display: block;
+}
+[data-script-enabled=true] .js-tab-item,
+[data-script-enabled=true] .js-tab-news-items {
+  display: none;
+}
+[data-script-enabled=true] .js-tab-item.is-active,
+[data-script-enabled=true] .js-tab-news-items.is-active {
+  display: block;
+}
+
+[data-script-enabled=true] .js-fade-roots {
+  opacity: 0;
+}
+
+.mv__animation-01 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: mvAnimation 4s;
+}
+.mv__animation-01 > .view-item {
+  display: none;
+}
+.mv__animation-01 > .view-item.is-display {
+  display: block;
+}
+
+.mv__animation-02 {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  animation: mvAnimation 4s 1s;
+}
+.mv__animation-02 > .view-item {
+  display: none;
+}
+.mv__animation-02 > .view-item.is-display {
+  display: block;
+}
+
+.mv__animation-03 {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  animation: mvAnimation 4s 2s;
+}
+.mv__animation-03 > .view-item {
+  display: none;
+}
+.mv__animation-03 > .view-item.is-display {
+  display: block;
+}
+
+.mv__animation-04 {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  animation: mvAnimation 4s 3s;
+}
+.mv__animation-04 > .view-item {
+  display: none;
+}
+.mv__animation-04 > .view-item.is-display {
+  display: block;
+}
+
+.mv__animation-05 {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  animation: mvAnimation 4s 4s;
+}
+.mv__animation-05 > .view-item {
+  display: none;
+}
+.mv__animation-05 > .view-item.is-display {
+  display: block;
+}
+
+#js-youtube-root > ul > li .items__img > a > img {
+  display: inline-block;
+}
+.is-fixed {
+  position: fixed;
+  width: 100%;
+}
+
+.is-historyfade {
+  animation: menuFadeInAnimation 0.4s 0.6s ease-in-out forwards;
+}
+
+.is-fade {
+  animation: fadeInAnimation 0.6s ease-in-out forwards;
+}
+
+.is-slide-left {
+  animation: slideLightInAnimation 0.6s ease-in-out forwards;
+}
+
+.is-slide-right {
+  animation: slideRightInAnimation 0.6s ease-in-out forwards;
+}

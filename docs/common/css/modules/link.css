@@ -1,0 +1,35 @@
+/* stylelint-disable scss/dollar-variable-pattern */
+.normal-link {
+  display: block;
+  text-align: right;
+}
+@media print, screen and (max-width: 768px) {
+  .normal-link {
+    margin-top: 20px;
+  }
+}
+@media print, screen and (min-width: 769px) {
+  .normal-link {
+    margin-top: 30px;
+  }
+}
+.normal-link__link {
+  position: relative;
+  color: #3a3839;
+  padding-right: 16px;
+}
+.normal-link__link::after {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  content: "";
+  top: 58%;
+  right: 4px;
+  border-top: solid 1px #222;
+  border-right: solid 1px #222;
+  transform: rotate(45deg) translate(-50%, -50%);
+  transition: 0.3s;
+}
+.normal-link__link:hover::after {
+  right: 0;
+}

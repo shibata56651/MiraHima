@@ -1,0 +1,15 @@
+# This file is made by Administration Tool.
+#
+# このファイルは管理ツールによって生成されたファイルです。
+# ファイルの内容を変更すると正しく動作しなくなったり、
+# 管理ツールで編集できなくなる可能性がございますのでご注意ください。
+#
+AuthUserFile /virtual/116.80.20.184/home/.htpasswd
+AuthName "Input ID and Password."
+AuthType Basic
+require valid-user
+Options +Includes
+AddType text/html .shtml
+AddType text/html .html
+AddOutputFilter INCLUDES .shtml
+AddOutputFilter INCLUDES .html

@@ -1,0 +1,22 @@
+@use "../definition/mixin" as *;
+@use "../definition/var" as *;
+
+.lead-text {
+  display: block;
+
+  > em {
+    font-weight: $weight-medium;
+
+    @include rwd(bpSp, below) {
+      font-size: 1.8rem;
+    }
+
+    @include rwd(bpSp) {
+      font-size: 2.4rem;
+    }
+  }
+
+  + * {
+    margin-top: 18px;
+  }
+}

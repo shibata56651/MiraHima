@@ -1,0 +1,93 @@
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideRightInAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideLightInAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes cube-transition {
+  25% {
+    transform: translateX(50px) scale(0.5) rotate(-90deg);
+  }
+  50% {
+    transform: translate(50px, 50px) rotate(-180deg);
+  }
+  75% {
+    transform: translateY(50px) scale(0.5) rotate(-270deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes float {
+  to {
+    transform: translateY(-100%);
+  }
+}
+@keyframes animate-feather {
+  0% {
+    opacity: 0;
+    top: 0;
+    transform: rotate(0);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 100svh;
+    transform: rotate(1080deg);
+  }
+}
+@keyframes animate-star {
+  0% {
+    opacity: 0;
+    top: 0;
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 100svh;
+    transform: rotate3d(0, 0, 1, 1080deg);
+  }
+}
+@keyframes spotlightAnimation {
+  0% {
+    transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}

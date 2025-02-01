@@ -1,0 +1,42 @@
+@use "./var" as *;
+
+@mixin pseudo {
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+@mixin hover {
+  &:hover,
+  &:active,
+  &:focus {
+    @content;
+  }
+}
+
+// #Media Queries
+@mixin rwd($media: bpSp, $area: above) {
+  @if $area == above {
+    @if $media == bpSp {
+      @media print, screen and (min-width: $bpSp + 1) { @content; } // 769px
+    } @else if $media == bpTab {
+      @media print, screen and (min-width: $bpTab + 1) { @content; } // 1025px
+    } @else if $media == bpPc {
+      @media print, screen and (min-width: $bpPc + 1) { @content; }
+    } @else {
+      @media print, screen and (min-width: $media) { @content; }
+    }
+  }
+
+  @if $area == below {
+    @if $media == bpSp {
+      @media print, screen and (max-width: $bpSp) { @content; } // 768px
+    } @else if $media == bpTab {
+      @media print, screen and (max-width: $bpTab) { @content; } // 1024px
+    } @else if $media == bpPc {
+      @media print, screen and (max-width: $bpPc) { @content; }
+    } @else {
+      @media print, screen and (max-width: $media) { @content; }
+    }
+  }
+}

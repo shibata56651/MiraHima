@@ -110,3 +110,4 @@ SmoothScrollでスクロール量を取得する機能です。
 
 ###### utility > UserAgent.js
 ブラウザごとに表示を切り替えたい場合に、使用してください。
+# MiraHima

@@ -1,0 +1,10 @@
+@use "../definition/mixin" as *;
+@use "../definition/var" as *;
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 200,
+    "GRAD" 0,
+    "opsz" 20;
+}

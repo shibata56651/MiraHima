@@ -1,0 +1,123 @@
+/* stylelint-disable scss/dollar-variable-pattern */
+.recruit__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 100vh;
+}
+
+@media print, screen and (min-width: 769px) {
+  .basic-tab > dl {
+    display: flex;
+    gap: 80px;
+  }
+}
+.basic-tab > dl > dt {
+  flex-shrink: 0;
+}
+.basic-tab > dl > dd {
+  width: 100%;
+}
+
+@media print, screen and (max-width: 768px) {
+  .tab-category-list {
+    margin-bottom: 20px;
+  }
+}
+@media print, screen and (max-width: 768px) {
+  .tab-category-list__wrap {
+    display: flex;
+  }
+}
+.tab-category-list__button {
+  position: relative;
+  transition: 0.5s;
+}
+@media print, screen and (max-width: 768px) {
+  .tab-category-list__button {
+    width: 100%;
+  }
+}
+@media print, screen and (min-width: 769px) {
+  .tab-category-list__button {
+    padding-left: 16px;
+  }
+}
+.tab-category-list__button:hover {
+  color: #0433e3;
+}
+@media print, screen and (max-width: 768px) {
+  .tab-category-list__list {
+    width: 33.3333333333%;
+    text-align: center;
+  }
+}
+@media print, screen and (max-width: 768px) {
+  .tab-category-list__list:nth-of-type(n+2) {
+    border-left: solid 1px #222;
+  }
+}
+@media print, screen and (min-width: 769px) {
+  .tab-category-list__list:nth-of-type(n+2) {
+    margin-top: 12px;
+  }
+}
+.tab-category-list__list.is-active .tab-category-list__button {
+  color: #032fe8;
+}
+@media print, screen and (min-width: 769px) {
+  .tab-category-list__list.is-active .tab-category-list__button::before {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 1000px;
+    background: #032fe8;
+  }
+}
+
+.tab-contents-list__list {
+  border-bottom: solid 2px #222;
+}
+@media print, screen and (max-width: 768px) {
+  .tab-contents-list__list:nth-of-type(n+2) .tab-contents-list__anchor {
+    padding-top: 10px;
+  }
+}
+@media print, screen and (min-width: 769px) {
+  .tab-contents-list__list:nth-of-type(n+2) .tab-contents-list__anchor {
+    padding-top: 14px;
+  }
+}
+@media print, screen and (max-width: 768px) {
+  .tab-contents-list__date {
+    margin-bottom: 4px;
+  }
+}
+.tab-contents-list__anchor {
+  display: block;
+  color: #222;
+  transition: 0.3s;
+}
+@media print, screen and (max-width: 768px) {
+  .tab-contents-list__anchor {
+    padding-bottom: 10px;
+  }
+}
+@media print, screen and (min-width: 769px) {
+  .tab-contents-list__anchor {
+    display: flex;
+    gap: 40px;
+    padding-bottom: 14px;
+  }
+}
+.tab-contents-list__anchor:hover {
+  color: #0433e3;
+}
+.tab-contents-list__content-text {
+  font-weight: 500;
+}

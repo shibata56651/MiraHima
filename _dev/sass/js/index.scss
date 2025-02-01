@@ -1,0 +1,29 @@
+@forward "carousel";
+@forward "modal";
+@forward "toggle";
+@forward "carousel";
+@forward "tab";
+@forward "fade";
+@forward "mvAnimation";
+@forward "youtubeAPI";
+
+.is-fixed {
+  position: fixed;
+  width: 100%;
+}
+
+.is-historyfade {
+  animation: menuFadeInAnimation .4s .6s ease-in-out forwards;
+}
+
+.is-fade {
+  animation: fadeInAnimation .6s ease-in-out forwards;
+}
+
+.is-slide-left {
+  animation: slideLightInAnimation .6s ease-in-out forwards;
+}
+
+.is-slide-right {
+  animation: slideRightInAnimation .6s ease-in-out forwards;
+}

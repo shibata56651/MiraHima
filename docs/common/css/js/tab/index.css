@@ -1,0 +1,27 @@
+/* stylelint-disable scss/dollar-variable-pattern */
+[data-script-enabled=true] .js-tab > ul > li.is-active > a {
+  position: relative;
+}
+[data-script-enabled=true] .js-tab > ul > li.is-active > a::before {
+  display: block;
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  width: calc(100% - 40px);
+  height: 1px;
+  transform: translate(-50%, 0);
+}
+
+.js-tab-item,
+.js-tab-news-items {
+  display: block;
+}
+[data-script-enabled=true] .js-tab-item,
+[data-script-enabled=true] .js-tab-news-items {
+  display: none;
+}
+[data-script-enabled=true] .js-tab-item.is-active,
+[data-script-enabled=true] .js-tab-news-items.is-active {
+  display: block;
+}

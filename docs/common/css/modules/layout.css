@@ -1,0 +1,32 @@
+/* stylelint-disable scss/dollar-variable-pattern */
+@media print, screen and (min-width: 769px) {
+  .lyt-content {
+    display: flex;
+    gap: 16px;
+    margin: 120px auto 0;
+    max-width: 800px;
+    width: 100%;
+  }
+  .lyt-content + .lyt-content {
+    margin: 60px auto 0;
+  }
+}
+@media print, screen and (min-width: 769px) {
+  .lyt-content--reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 16px;
+  }
+}
+
+.lyt-item__img {
+  position: relative;
+}
+@media print, screen and (min-width: 769px) {
+  .lyt-item__img {
+    flex-shrink: 4;
+  }
+}
+.lyt-item__text {
+  width: 100%;
+}

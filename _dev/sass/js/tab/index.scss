@@ -1,0 +1,39 @@
+@use "../../definition/mixin" as *;
+@use "../../definition/var" as *;
+
+.js-tab {
+  [data-script-enabled="true"] & {
+    >ul {
+      >li {
+        &.is-active {
+          >a {
+            position: relative;
+
+            &::before {
+              @include pseudo;
+
+              bottom: 0;
+              left: 50%;
+              width: calc(100% - 40px);
+              height: 1px;
+              transform: translate(-50%, 0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.js-tab-item,
+.js-tab-news-items {
+  display: block;
+
+  [data-script-enabled="true"] & {
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
+}

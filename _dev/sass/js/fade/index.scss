@@ -1,0 +1,8 @@
+@use "../../definition/mixin" as *;
+@use "../../definition/var" as *;
+
+.js-fade-roots {
+  [data-script-enabled="true"] & {
+    opacity: 0;
+  }
+}

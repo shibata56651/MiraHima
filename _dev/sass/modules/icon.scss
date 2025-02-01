@@ -1,0 +1,7 @@
+@use "../definition/mixin" as *;
+@use "../definition/var" as *;
+
+.icon-base {
+  display: inline-block;
+  position: absolute;
+}

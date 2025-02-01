@@ -1,0 +1,35 @@
+/* stylelint-disable scss/dollar-variable-pattern */
+@charset "UTF-8";
+
+$bpPc: 1275px;
+$bpTab: 1024px;
+$bpSp: 768px;
+$bpSmall: 425px;
+
+$font-01: "Kiwi Maru", serif;
+
+$weight-light: 300;
+$weight-normal: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+
+$index-first: 1;
+$index-header: 100;
+
+$color-white: #fefefe;
+$color-black: #3a3839;
+$color-blue: #8df6f7;
+$color-yellow: #fbe24a;
+
+$color-bg: #f1f1f1;
+
+$color-gray: #666;
+$color-gray-02: #cdcdcd;
+$color-gray-03: #979797;
+$color-gray-04: #a2a2a2;
+
+$color-gradient-01: linear-gradient(90deg, rgb(0 0 0 / 100%) 0%, rgb(17 17 17 / 100%) 100%);
+$color-gradient-02: linear-gradient(90deg, rgb(17 17 17 / 100%) 0%, rgb(51 51 51 / 100%) 100%);
+
+$color-strong-01: #e60027;

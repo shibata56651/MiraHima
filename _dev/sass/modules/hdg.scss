@@ -1,0 +1,41 @@
+@use "../definition/mixin" as *;
+@use "../definition/var" as *;
+
+.hdg-a {
+  text-align: center;
+
+  @include rwd(bpSp, below) {
+    margin-bottom: 10px;
+  }
+
+  @include rwd(bpSp) {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    display: inline-block;
+    position: relative;
+    font-weight: bold;
+    line-height: 1.5;
+    color: $color-white;
+
+    @include rwd(bpSp, below) {
+      font-size: 2rem;
+    }
+
+    @include rwd(bpSp) {
+      font-size: 2.4rem;
+    }
+
+    &::before {
+      @include pseudo();
+
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: 1000px;
+      background: linear-gradient(90deg, rgba(141, 245, 247, .7) 0%, rgba(163,255,255, .7) 35%, rgba(255,255,255, .7) 50%, rgba(255,234,107, .7) 65%, rgba(251,226,74, .7) 100%);
+      filter: blur(16px);
+    }
+  }
+}
