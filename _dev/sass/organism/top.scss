@@ -22,18 +22,62 @@
     position: sticky;
     width: 100%;
     top: 0;
-    bottom: 300px;
-    display: flex;
-    justify-content: center;
+
+    @include rwd(bpSp, below) {
+      height: 100svh;
+      padding-top: 80px;
+      bottom: 0;
+      overflow: hidden;
+    }
+
+    @include rwd(bpSp) {
+      display: flex;
+      justify-content: center;
+      padding-top: 120px;
+      bottom: 300px;
+    }
   }
 
-  &__img {
+  &__unit-logo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 0;
+
     @include rwd(bpSp, below) {
       width: 300px;
     }
 
     @include rwd(bpSp) {
-      width: 460px;
+      width: 500px;
+    }
+  }
+
+  &__img {
+    z-index: 1;
+
+    @include rwd(bpSp, below) {
+      position: absolute;
+      width: 360px;
+    }
+
+    @include rwd(bpSp) {
+      width: 400px;
+    }
+
+    &--left {
+      @include rwd(bpSp, below) {
+        top: 90px;
+        left: -50px;
+      }
+    }
+
+    &--right {
+      @include rwd(bpSp, below) {
+        top: 90px;
+        right: -70px;
+      }
     }
   }
 }
@@ -41,6 +85,10 @@
 .lead-text-content {
   @include rwd(bpSp) {
     margin-bottom: 60px;
+  }
+
+  @include rwd(bpSp, below) {
+    margin-bottom: 40px;
   }
 }
 
@@ -54,7 +102,8 @@
   margin: 0 auto;
 
   @include rwd(bpSp, below) {
-    width: 300px;
+    margin: 60px auto;
+    max-width: calc(100% - 40px);
   }
 
   @include rwd(bpSp) {
@@ -288,5 +337,12 @@
     background: #fff;
     clip-path: polygon(44% 0, 56% 0, 90% 100%, 10% 100%);
     opacity: .3;
+  }
+}
+
+.playlist {
+  &__target {
+    width: 100%;
+    aspect-ratio: 5 / 3;
   }
 }

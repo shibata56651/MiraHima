@@ -2,16 +2,22 @@
 @use "../definition/var" as *;
 
 .lyt-content {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+
   @include rwd(bpSp) {
-    display: flex;
-    gap: 16px;
     margin: 120px auto 0;
     max-width: 800px;
-    width: 100%;
 
     + .lyt-content {
       margin: 60px auto 0;
     }
+  }
+
+  @include rwd(bpSp, below) {
+    margin: 60px auto 0;
+    flex-direction: column-reverse;
   }
 
   &--reverse {
@@ -34,8 +40,24 @@
 
   &__text {
     width: 100%;
-  
+  }
+}
+
+.lyt-playlist {
+  &__wrap {
+    display: flex;
+    gap: 16px;
+
+    @include rwd(bpSp, below) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    display: block;
+
     @include rwd(bpSp) {
+      width: calc((100% / 2) - 8px);
     }
   }
 }

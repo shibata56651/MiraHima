@@ -1,14 +1,22 @@
 /* stylelint-disable scss/dollar-variable-pattern */
+.lyt-content {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
 @media print, screen and (min-width: 769px) {
   .lyt-content {
-    display: flex;
-    gap: 16px;
     margin: 120px auto 0;
     max-width: 800px;
-    width: 100%;
   }
   .lyt-content + .lyt-content {
     margin: 60px auto 0;
+  }
+}
+@media print, screen and (max-width: 768px) {
+  .lyt-content {
+    margin: 60px auto 0;
+    flex-direction: column-reverse;
   }
 }
 @media print, screen and (min-width: 769px) {
@@ -29,4 +37,22 @@
 }
 .lyt-item__text {
   width: 100%;
+}
+
+.lyt-playlist__wrap {
+  display: flex;
+  gap: 16px;
+}
+@media print, screen and (max-width: 768px) {
+  .lyt-playlist__wrap {
+    flex-direction: column;
+  }
+}
+.lyt-playlist__item {
+  display: block;
+}
+@media print, screen and (min-width: 769px) {
+  .lyt-playlist__item {
+    width: calc(50% - 8px);
+  }
 }
