@@ -533,7 +533,7 @@ address {
 }
 
 .feather-1 {
-  background-image: url("/common/img/assets/feather.png");
+  background-image: url("../img/assets/feather.png");
 }
 
 .star {
@@ -545,7 +545,7 @@ address {
 }
 
 .star-1 {
-  background-image: url("/common/img/assets/star.png");
+  background-image: url("../img/assets/star.png");
 }
 
 .js-load-indicator {
