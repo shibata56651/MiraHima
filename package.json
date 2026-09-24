@@ -14,7 +14,8 @@
     "lint:js": "eslint",
     "test": "run-s build jest",
     "jest": "jest --config=./_dev/jest.config.js --testTimeout=30000",
-    "jest:update": "jest --config=./_dev/jest.config.js --testTimeout=30000 --update-snapshot"
+    "jest:update": "jest --config=./_dev/jest.config.js --testTimeout=30000 --update-snapshot",
+    "test:youtube": "jest --env=jsdom --runInBand tests/youtubeApi.test.js"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
