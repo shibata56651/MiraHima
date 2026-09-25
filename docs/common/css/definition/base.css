@@ -62,7 +62,7 @@
   }
   100% {
     opacity: 0;
-    top: 100svh;
+    top: 100lvh;
     transform: rotate(1080deg);
   }
 }
@@ -80,7 +80,7 @@
   }
   100% {
     opacity: 0;
-    top: 100svh;
+    top: 100lvh;
     transform: rotate3d(0, 0, 1, 1080deg);
   }
 }
@@ -235,7 +235,7 @@ address {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100svh;
+  height: 100lvh;
   width: 100%;
   overflow: hidden;
   background: linear-gradient(0, #001841 0%, #042e4e 20%, #042e4e 100%);
@@ -278,7 +278,7 @@ address {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100svh;
   background: #3a3839;
   animation: loadingFinish 3s forwards ease-in-out;
 }

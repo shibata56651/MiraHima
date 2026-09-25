@@ -17,7 +17,7 @@ type YouTubeResponse = {
 };
 
 export class youtubeApi {
-  o: { CHANNEL_ID_01: string; CHANNEL_ID_02: string; CHANNEL_ID_03: string; APIKEY: string };
+  o: { CHANNEL_ID_01: string; CHANNEL_ID_02: string; APIKEY: string };
   liveRoot: HTMLUListElement;
   reservationRoot: HTMLUListElement;
   liveMessage: HTMLParagraphElement;
@@ -27,7 +27,6 @@ export class youtubeApi {
     this.o = {
       CHANNEL_ID_01: 'UCg7ayfyvQWbruGAlLy9F8EQ',
       CHANNEL_ID_02: 'UCuCRPpSFUXrvBK__75GT8Yg',
-      CHANNEL_ID_03: 'UCqKexNL7YoueTlGSNZXoqPQ',
       APIKEY: 'AIzaSyDpGvB-IA0WgEVBYrMdW-dl8zm4emzLYwE',
     };
 
@@ -169,7 +168,7 @@ export class youtubeApi {
   async onJSClientLoad() {
     this.liveRoot.textContent = '';
     this.reservationRoot.textContent = '';
-    const channelIds = [this.o.CHANNEL_ID_01, this.o.CHANNEL_ID_02, this.o.CHANNEL_ID_03];
+    const channelIds = [this.o.CHANNEL_ID_01, this.o.CHANNEL_ID_02];
     const results = await Promise.all(channelIds.map(async channelId => {
       try {
         await this.loadChannel(channelId);

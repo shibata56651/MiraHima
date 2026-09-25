@@ -42,25 +42,25 @@ test('少数の取得結果・通常動画・削除済み動画で例外が発�
   expect(document.querySelectorAll('li')).toHaveLength(0);
   expect(api.liveMessage.textContent).toContain('現在配信中の動画はありません');
   const requests = global.fetch.mock.calls.map(([url]) => new URL(url));
-  expect(requests).toHaveLength(9);
-  expect(requests.filter(url => url.pathname.endsWith('/videos'))).toHaveLength(3);
+  expect(requests).toHaveLength(6);
+  expect(requests.filter(url => url.pathname.endsWith('/videos'))).toHaveLength(2);
   expect(requests.every(url => !url.toString().includes('undefined'))).toBe(true);
 });
 
 test('空のプレイリストでは動画情報APIを呼ばない', async () => {
   mockApi([], []);
   await api.onJSClientLoad();
-  expect(global.fetch).toHaveBeenCalledTimes(6);
+  expect(global.fetch).toHaveBeenCalledTimes(4);
   expect(api.reservationMessage.hidden).toBe(false);
 });
 
 test('配信時刻やmaxres画像がなくても配信中と配信予定を表示できる', async () => {
   mockApi([video('current', 'live'), video('scheduled', 'upcoming')]);
   await api.onJSClientLoad();
-  expect(api.liveRoot.children).toHaveLength(3);
-  expect(api.reservationRoot.children).toHaveLength(3);
-  expect(api.liveRoot.classList.contains('youtube-list--col3')).toBe(true);
-  expect(api.reservationRoot.classList.contains('youtube-list--col3')).toBe(true);
+  expect(api.liveRoot.children).toHaveLength(2);
+  expect(api.reservationRoot.children).toHaveLength(2);
+  expect(api.liveRoot.classList.contains('youtube-list--col2')).toBe(true);
+  expect(api.reservationRoot.classList.contains('youtube-list--col2')).toBe(true);
   expect(api.liveRoot.querySelector('img').src).toBe('https://example.com/image.jpg');
   expect(api.liveRoot.querySelector('.youtube-content__items-text').textContent).toBe('<配信タイトル>');
   expect(document.querySelectorAll('.details-content')).toHaveLength(0);
@@ -82,7 +82,7 @@ test('配信予定時刻を日付をまたいで日本時間に変換し、不�
   await api.onJSClientLoad();
   expect(document.querySelector('.details-content__items-scheduled-date').textContent).toBe('2026/09/25');
   expect(document.querySelector('.details-content__items-scheduled-time').textContent).toBe('03:05');
-  expect(document.querySelectorAll('.details-content')).toHaveLength(3);
+  expect(document.querySelectorAll('.details-content')).toHaveLength(2);
 });
 
 test.each(['http', 'network', 'malformed', 'empty-channel', 'json'])(
@@ -108,7 +108,7 @@ test('1チャンネルが失敗しても残りのチャンネルを表示する'
     return fetchSuccess(url);
   });
   await api.onJSClientLoad();
-  expect(api.liveRoot.children).toHaveLength(2);
+  expect(api.liveRoot.children).toHaveLength(1);
   expect(api.liveMessage.hidden).toBe(false);
   expect(api.liveMessage.textContent).toContain('取得できませんでした');
 });

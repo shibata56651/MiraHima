@@ -61,7 +61,7 @@
   }
   100% {
     opacity: 0;
-    top: 100svh;
+    top: 100lvh;
     transform: rotate(1080deg);
   }
 }
@@ -79,7 +79,7 @@
   }
   100% {
     opacity: 0;
-    top: 100svh;
+    top: 100lvh;
     transform: rotate3d(0, 0, 1, 1080deg);
   }
 }

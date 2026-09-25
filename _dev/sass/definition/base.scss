@@ -153,7 +153,7 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100svh;
+  height: 100lvh;
   width: 100%;
   overflow: hidden;
   background: linear-gradient(0, #001841 0%, #042e4e 20%, #042e4e 100%);
@@ -197,7 +197,7 @@ p {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100svh;
   background: $color-black;
   animation: loadingFinish 3s forwards ease-in-out;
 }

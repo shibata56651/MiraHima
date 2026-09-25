@@ -1,6 +1,6 @@
 /* stylelint-disable scss/dollar-variable-pattern */
 .str-contents-wrapper__inner {
-  padding-top: 100svh;
+  padding-top: 100lvh;
 }
 .str-contents-wrapper--top {
   padding-top: 56px;
@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 200svh;
+  height: 200lvh;
 }
 .mv-top__content {
   position: sticky;
@@ -20,7 +20,7 @@
 }
 @media print, screen and (max-width: 768px) {
   .mv-top__content {
-    height: 100svh;
+    height: 100lvh;
     padding-top: 80px;
     bottom: 0;
     overflow: hidden;
@@ -169,8 +169,8 @@
 
 .movie-content {
   position: relative;
-  width: 100svw;
-  height: 100svh;
+  width: 100vw;
+  height: 100lvh;
   overflow: hidden;
   z-index: -1;
 }
@@ -203,7 +203,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100svh;
+  height: 100lvh;
   z-index: -1;
 }
 .psyllium-a::before, .psyllium-a::after,
@@ -280,7 +280,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100svh;
+  height: 100lvh;
   z-index: -1;
 }
 .spot-light--left::before {
@@ -328,4 +328,60 @@
 .playlist__target {
   width: 100%;
   aspect-ratio: 5/3;
+}
+
+.sns-star {
+  position: relative;
+  display: block;
+  margin-top: 12px;
+  padding-left: 14px;
+}
+.sns-star::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 8px;
+  left: 0;
+  width: 8px;
+  height: 10px;
+  background: #fefefe;
+  clip-path: polygon(0 100%, 0 0, 100% 50%);
+}
+.sns-star__text {
+  color: transparent;
+  background: linear-gradient(to right, #fbe24a 50%, #fff 50%) 100%;
+  background-clip: text;
+  background-size: 200% 100%;
+  transition: background-position 0.3s;
+}
+.sns-star__text:hover {
+  background-position: 0 100%;
+}
+
+.sns-white {
+  position: relative;
+  display: block;
+  margin-top: 12px;
+  padding-left: 14px;
+}
+.sns-white::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 8px;
+  left: 0;
+  width: 8px;
+  height: 10px;
+  background: #fefefe;
+  clip-path: polygon(0 100%, 0 0, 100% 50%);
+}
+.sns-white__text {
+  color: transparent;
+  background: linear-gradient(to right, #8df6f7 50%, #fff 50%) 100%;
+  background-clip: text;
+  background-size: 200% 100%;
+  transition: background-position 0.3s;
+}
+.sns-white__text:hover {
+  background-position: 0 100%;
 }

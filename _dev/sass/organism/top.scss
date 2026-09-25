@@ -3,7 +3,7 @@
 
 .str-contents-wrapper {
   &__inner {
-    padding-top: 100svh;
+    padding-top: 100lvh;
   }
 
   &--top {
@@ -16,7 +16,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(100svh * 2);
+  height: calc(100lvh * 2);
 
   &__content {
     position: sticky;
@@ -24,7 +24,7 @@
     top: 0;
 
     @include rwd(bpSp, below) {
-      height: 100svh;
+      height: 100lvh;
       padding-top: 80px;
       bottom: 0;
       overflow: hidden;
@@ -173,8 +173,8 @@
 
 .movie-content {
   position: relative;
-  width: 100svw;
-  height: 100svh;
+  width: 100vw;
+  height: 100lvh;
   overflow: hidden;
   z-index: -1;
 }
@@ -205,7 +205,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100svh;
+  height: 100lvh;
   z-index: -1;
 
   &::before,
@@ -286,7 +286,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100svh;
+  height: 100lvh;
   z-index: -1;
 
   &--left {
@@ -344,5 +344,65 @@
   &__target {
     width: 100%;
     aspect-ratio: 5 / 3;
+  }
+}
+
+.sns-star {
+  position: relative;
+  display: block;
+  margin-top: 12px;
+  padding-left: 14px;
+
+  &::before {
+    @include pseudo();
+
+    top: 8px;
+    left: 0;
+    width: 8px;
+    height: 10px;
+    background: $color-white;
+    clip-path: polygon(0 100%, 0 0, 100% 50%);
+  }
+
+  &__text {
+    color: transparent;
+    background: linear-gradient(to right, #fbe24a 50%, #fff 50%) 100%;
+    background-clip: text;
+    background-size: 200% 100%;
+    transition: background-position .3s;
+
+    &:hover {
+      background-position: 0 100%;
+    }
+  }
+}
+
+.sns-white {
+  position: relative;
+  display: block;
+  margin-top: 12px;
+  padding-left: 14px;
+
+  &::before {
+    @include pseudo();
+
+    top: 8px;
+    left: 0;
+    width: 8px;
+    height: 10px;
+    background: $color-white;
+    clip-path: polygon(0 100%, 0 0, 100% 50%);
+  }
+
+  &__text {
+    color: transparent;
+    background: linear-gradient(to right, #8df6f7 50%, #fff 50%) 100%;
+    background-clip: text;
+    background-size: 200% 100%;
+    transition: background-position .3s;
+
+    &:hover {
+      background-position: 0 100%;
+    }
   }
 }
