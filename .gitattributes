@@ -1,2 +1,5 @@
 *.mov filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
+
+# Serve the optimized Pages background video as a regular Git blob.
+/docs/common/mov/mov.mp4 -filter -diff -merge -text
